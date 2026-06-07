@@ -8,124 +8,131 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family:'DM Sans', sans-serif;
-  background: linear-gradient(135deg,#ffe4ee,#ffd6e7,#fce8f3);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'DM Sans', sans-serif;
+  background: radial-gradient(circle at top, #ffe4ee, #ffd6e7, #fce8f3);
 }
 
-/* FULL CENTERING */
+/* LAYOUT */
 .scene {
-  width:100%;
-  max-width:700px;
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  min-height:100vh;
+  width: 100%;
+  max-width: 750px;
+  padding: 20px;
+  text-align: center;
 }
 
-/* ENVELOPE WRAP */
+/* ENVELOPE */
 .envelope-wrap {
-  cursor:pointer;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-bottom:30px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: 0.4s ease;
 }
 
-/* MUCH BIGGER ENVELOPE */
+.envelope-wrap:hover {
+  transform: translateY(-4px);
+}
+
 .envelope {
-  width:420px;
-  height:260px;
-  position:relative;
-  background:#f0849f;
-  border-radius:12px;
-  box-shadow:0 12px 35px rgba(0,0,0,0.18);
-  overflow:hidden;
+  width: 430px;
+  height: 260px;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(145deg, #f58aa6, #e86f8e);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  overflow: hidden;
 }
 
 /* FLAP */
 .env-flap {
-  position:absolute;
-  top:0;
-  width:100%;
-  height:60%;
-  background:#f9c8d8;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 60%;
+  background: #ffd0de;
   clip-path: polygon(0 0, 50% 100%, 100% 0);
-  transform-origin:top;
-  transition:0.6s;
-  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+  transform-origin: top;
+  transition: 0.7s cubic-bezier(.2,.8,.2,1);
 }
 
 .envelope-wrap.open .env-flap {
-  transform:rotateX(180deg);
+  transform: rotateX(180deg);
 }
 
-/* HEART SEAL */
+/* HEART */
 .heart {
-  position:absolute;
-  top:48%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  font-size:48px;
-  color:white;
-  opacity:0.95;
-  z-index:5;
-  transition:0.3s ease;
-  pointer-events:none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: white;
+  transition: 0.3s;
 }
 
-.envelope-wrap:hover .heart {
-  transform:translate(-50%, -50%) scale(1.18);
+.envelope-wrap.open .heart {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.6);
 }
 
 /* LETTER */
 .letter-container {
-  opacity:0;
-  transform:translateY(20px);
-  transition:0.6s;
-  margin-top:10px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
 }
 
 .letter-container.visible {
-  opacity:1;
-  transform:translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
+/* PAPER */
 .letter-paper {
-  background:white;
-  padding:45px;
-  border-radius:10px;
-  text-align:left;
-  box-shadow:0 10px 40px rgba(0,0,0,0.15);
-  font-family:'Playfair Display', serif;
-  font-size:18px;
-  line-height:1.8;
+  background: white;
+  padding: 55px 50px;
+  border-radius: 14px;
+  text-align: left;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.18);
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  line-height: 1.85;
+  position: relative;
 }
 
-/* SPACED PARAGRAPHS */
+/* TEXT SPACING */
 .letter-paper p {
-  margin-bottom:18px;
+  margin-bottom: 16px;
 }
 
-/* PHOTO */
+/* TITLE */
+.letter-paper h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* IMAGE */
 .photo-wrap {
-  margin-top:30px;
-  text-align:center;
+  margin-top: 35px;
+  text-align: center;
 }
 
 .photo-wrap img {
-  width:100%;
-  max-width:340px;
-  border-radius:10px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 360px;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
 </style>
 </head>
@@ -146,7 +153,7 @@ body {
   <div class="letter-container" id="letterContainer">
     <div class="letter-paper">
 
-      <h2 style="margin-bottom:10px;">For Anvita</h2>
+      <h2>For Anvita</h2>
       <p><b>from Shreya ♥</b></p>
 
       <p>Dear Anvita,</p>
@@ -157,26 +164,28 @@ body {
 
       <p>And since then, I have basically just lived at your place. Your apartment genuinely became one of my favorite places, not because of anything specific about it, but just because it is you. We would be on your couch doing absolutely nothing, half-watching Heartbreak High and still not finishing it, eating whatever random food (aka me eating your whole kitchen), barely studying, just talking and brainrotting and existing, and it’s always somehow the best time. And we are 100% calling and finishing it this summer!!</p>
 
-      <p>I also just love how naturally you include me in things. Errands, random plans, whatever you are doing, you just pull me along, like of course I’m coming, and I love that more than I probably say. It sounds small, but it is one of those things that makes you feel genuinely wanted in someone's life, and you do that without even trying.</p>
+      <p>I also just love how naturally you include me in things. Errands, random plans, whatever you are doing, you just pull me along, like of course I’m coming, and I love that more than I probably say.</p>
 
-      <p>I want to say something about who you are, because I think you deserve to hear it clearly. I genuinely don't think I have ever heard anyone say a single bad thing about you. Not one person. And I don't think that is luck or coincidence. That is just you. You are one of those rare people who are so genuinely kind and giving that it almost catches you off guard.</p>
+      <p>I genuinely don't think I have ever heard anyone say a single bad thing about you. Not one person. That is just you.</p>
 
-      <p>I joke a lot about acting like a younger sibling around you and how I can be so unhinged and stupid, but I really just appreciate that I can be completely myself with you. I ragebait you constantly, and your shocked face every single time is honestly one of my favorite things in the world. It is so genuinely funny and so cute, and I am going to miss it so much.</p>
+      <p>I joke a lot about acting like a younger sibling around you, but I really just appreciate that I can be completely myself with you. I ragebait you constantly, and your shocked face every single time is one of my favorite things in the world.</p>
 
-      <p>And I need you to hear this: I am always, always there. Nothing is ever too deep. Nothing is ever too much. You never have to filter yourself with me.</p>
+      <p>I also still think about that bus ride from Pia’s, and everything you shared with me after. I carry that with so much care.</p>
 
-      <p>Next year at UCSD, I know things will change, and that makes me sad. But I also want you to go into it fully. Say yes to things. Meet people. Take up space. You are going to find your people there too.</p>
+      <p>And I need you to hear this: I am always, always there. Nothing is ever too deep. Nothing is ever too much.</p>
 
-      <p>Just please don't forget me when you're at UCSD. I will be here, annoying you from whatever distance necessary.</p>
+      <p>Next year at UCSD, I know things will change, and that makes me sad. But I also want you to go into it fully. Say yes to things. Meet people. Take up space.</p>
+
+      <p>Just please don't forget me when you're at UCSD (especially once you’re on Zor).</p>
 
       <p>Thank you for everything. I love you so much. Go live your life fully next year. I will always be here cheering you on.</p>
 
-      <p><i>(I already know I forgot things I should’ve said… but I guess that’s what makes it real.)</i></p>
+      <p><i>(I already know I forgot things… but maybe that’s what makes it real.)</i></p>
 
       <p><b>Sincerely,<br>Shreya Hande</b></p>
 
       <div class="photo-wrap">
-        <img src="DSC04826.JPG">
+        <img src="DSC04826.JPG" alt="memory">
       </div>
 
     </div>
@@ -191,11 +200,9 @@ function openEnvelope() {
 
   wrap.classList.toggle("open");
 
-  if (wrap.classList.contains("open")) {
+  setTimeout(() => {
     letter.classList.add("visible");
-  } else {
-    letter.classList.remove("visible");
-  }
+  }, 250);
 }
 </script>
 
