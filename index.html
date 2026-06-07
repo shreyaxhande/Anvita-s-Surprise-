@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Anvita, from Shreya</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -22,7 +22,7 @@ body {
 /* FULL CENTERING */
 .scene {
   width:100%;
-  max-width:650px;
+  max-width:700px;
   text-align:center;
   display:flex;
   flex-direction:column;
@@ -37,17 +37,17 @@ body {
   display:flex;
   justify-content:center;
   align-items:center;
-  margin-bottom:20px;
+  margin-bottom:30px;
 }
 
-/* BIGGER ENVELOPE */
+/* MUCH BIGGER ENVELOPE */
 .envelope {
-  width:360px;
-  height:220px;
+  width:420px;
+  height:260px;
   position:relative;
   background:#f0849f;
-  border-radius:10px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.18);
+  border-radius:12px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.18);
   overflow:hidden;
 }
 
@@ -56,7 +56,7 @@ body {
   position:absolute;
   top:0;
   width:100%;
-  height:55%;
+  height:60%;
   background:#f9c8d8;
   clip-path: polygon(0 0, 50% 100%, 100% 0);
   transform-origin:top;
@@ -68,22 +68,22 @@ body {
   transform:rotateX(180deg);
 }
 
-/* HEART SEAL ON THE FLAP */
+/* HEART SEAL */
 .heart {
   position:absolute;
-  top:42%;
+  top:48%;
   left:50%;
   transform:translate(-50%, -50%);
-  font-size:40px;
+  font-size:48px;
   color:white;
   opacity:0.95;
   z-index:5;
   transition:0.3s ease;
-  pointer-events:none; /* heart moves with flap but click is on envelope */
+  pointer-events:none;
 }
 
 .envelope-wrap:hover .heart {
-  transform:translate(-50%, -50%) scale(1.15);
+  transform:translate(-50%, -50%) scale(1.18);
 }
 
 /* LETTER */
@@ -101,10 +101,18 @@ body {
 
 .letter-paper {
   background:white;
-  padding:40px;
-  border-radius:8px;
+  padding:45px;
+  border-radius:10px;
   text-align:left;
   box-shadow:0 10px 40px rgba(0,0,0,0.15);
+  font-family:'Playfair Display', serif;
+  font-size:18px;
+  line-height:1.8;
+}
+
+/* SPACED PARAGRAPHS */
+.letter-paper p {
+  margin-bottom:18px;
 }
 
 /* PHOTO */
@@ -115,8 +123,8 @@ body {
 
 .photo-wrap img {
   width:100%;
-  max-width:320px;
-  border-radius:8px;
+  max-width:340px;
+  border-radius:10px;
   box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 </style>
@@ -138,38 +146,34 @@ body {
   <div class="letter-container" id="letterContainer">
     <div class="letter-paper">
 
-      <h2>For Anvita</h2>
+      <h2 style="margin-bottom:10px;">For Anvita</h2>
       <p><b>from Shreya ♥</b></p>
 
-      <div style="margin-top:20px; line-height:1.7;">
+      <p>Dear Anvita,</p>
 
-        <p>Dear Anvita,</p>
+      <p>I keep trying to figure out how to start this, and I honestly don't think there is a clean way, so I am just going to say it: I am so genuinely grateful for you, and I am really sad you are leaving, and I don't fully know how to hold both of those feelings at the same time. So I figured I would just write it all down instead.</p>
 
-        <p>I keep trying to figure out how to start this, and I honestly don't think there is a clean way, so I am just going to say it: I am so genuinely grateful for you, and I am really sad you are leaving, and I don't fully know how to hold both of those feelings at the same time. So I figured I would just write it all down instead.</p>
+      <p>I think about comp last year a lot. The Chipotle bathroom incident. That whole chaotic, delirious, completely unhinged day. I had so much fun with you, and I genuinely don't think I understood in that moment that it would turn into something that would end up meaning this much to me. But that is kind of how it is with you. Things just happen naturally, and then suddenly they are some of your favorite things, and you cannot really imagine not having them.</p>
 
-        <p>I think about comp last year a lot. The Chipotle bathroom incident. That whole chaotic, delirious, completely unhinged day. I had so much fun with you, and I genuinely don't think I understood in that moment that it would turn into something that would end up meaning this much to me. But that is kind of how it is with you. Things just happen naturally, and then suddenly they are some of your favorite things, and you cannot really imagine not having them.</p>
+      <p>And since then, I have basically just lived at your place. Your apartment genuinely became one of my favorite places, not because of anything specific about it, but just because it is you. We would be on your couch doing absolutely nothing, half-watching Heartbreak High and still not finishing it, eating whatever random food (aka me eating your whole kitchen), barely studying, just talking and brainrotting and existing, and it’s always somehow the best time. And we are 100% calling and finishing it this summer!!</p>
 
-        <p>And since then, I have basically just lived at your place. Your apartment genuinely became one of my favorite places, not because of anything specific about it, but just because it is you. We would be on your couch doing absolutely nothing, half-watching Heartbreak High and still not finishing it, eating whatever random food (aka me eating your whole kitchen), barely studying, just talking and brainrotting and existing, and it’s always somehow the best time. And we are 100% calling and finishing it this summer!!</p>
+      <p>I also just love how naturally you include me in things. Errands, random plans, whatever you are doing, you just pull me along, like of course I’m coming, and I love that more than I probably say. It sounds small, but it is one of those things that makes you feel genuinely wanted in someone's life, and you do that without even trying.</p>
 
-        <p>I also just love how naturally you include me in things. Errands, random plans, whatever you are doing, you just pull me along, like of course I’m coming, and I love that more than I probably say. It sounds small, but it is one of those things that makes you feel genuinely wanted in someone's life, and you do that without even trying.</p>
+      <p>I want to say something about who you are, because I think you deserve to hear it clearly. I genuinely don't think I have ever heard anyone say a single bad thing about you. Not one person. And I don't think that is luck or coincidence. That is just you. You are one of those rare people who are so genuinely kind and giving that it almost catches you off guard.</p>
 
-        <p>I want to say something about who you are, because I think you deserve to hear it clearly. I genuinely don't think I have ever heard anyone say a single bad thing about you. Not one person. And I don't think that is luck or coincidence. That is just you. You are one of those rare people who are so genuinely kind and giving that it almost catches you off guard.</p>
+      <p>I joke a lot about acting like a younger sibling around you and how I can be so unhinged and stupid, but I really just appreciate that I can be completely myself with you. I ragebait you constantly, and your shocked face every single time is honestly one of my favorite things in the world. It is so genuinely funny and so cute, and I am going to miss it so much.</p>
 
-        <p>I joke a lot about acting like a younger sibling around you and how I can be so unhinged and stupid, but I really just appreciate that I can be completely myself with you. I ragebait you constantly, and your shocked face every single time is honestly one of my favorite things in the world. It is so genuinely funny and so cute, and I am going to miss it so much.</p>
+      <p>And I need you to hear this: I am always, always there. Nothing is ever too deep. Nothing is ever too much. You never have to filter yourself with me.</p>
 
-        <p>And I need you to hear this: I am always, always there. Nothing is ever too deep. Nothing is ever too much. You never have to filter yourself with me.</p>
+      <p>Next year at UCSD, I know things will change, and that makes me sad. But I also want you to go into it fully. Say yes to things. Meet people. Take up space. You are going to find your people there too.</p>
 
-        <p>Next year at UCSD, I know things will change, and that makes me sad. But I also want you to go into it fully. Say yes to things. Meet people. Take up space. You are going to find your people there too.</p>
+      <p>Just please don't forget me when you're at UCSD. I will be here, annoying you from whatever distance necessary.</p>
 
-        <p>Just please don't forget me when you're at UCSD. I will be here, annoying you from whatever distance necessary.</p>
+      <p>Thank you for everything. I love you so much. Go live your life fully next year. I will always be here cheering you on.</p>
 
-        <p>Thank you for everything. I love you so much. Go live your life fully next year. I will always be here cheering you on.</p>
+      <p><i>(I already know I forgot things I should’ve said… but I guess that’s what makes it real.)</i></p>
 
-        <p><i>(I already know I forgot things I should’ve said… but I guess that’s what makes it real.)</i></p>
-
-        <p><b>Sincerely,<br>Shreya Hande</b></p>
-
-      </div>
+      <p><b>Sincerely,<br>Shreya Hande</b></p>
 
       <div class="photo-wrap">
         <img src="DSC04826.JPG">
