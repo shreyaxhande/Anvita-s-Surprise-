@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,12 +10,6 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 
-:root {
-  --pink-deep:#e8678a;
-  --pink-dark:#c94070;
-  --cream:#fffbfc;
-}
-
 body {
   min-height:100vh;
   display:flex;
@@ -23,55 +17,26 @@ body {
   align-items:center;
   font-family:'DM Sans', sans-serif;
   background: linear-gradient(135deg,#ffe4ee,#ffd6e7,#fce8f3);
-  overflow-x:hidden;
 }
 
-/* hearts */
-.hearts-bg {
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
-}
-.heart-float {
-  position:absolute;
-  opacity:0.15;
-  animation: floatUp linear infinite;
-}
-@keyframes floatUp {
-  from { transform:translateY(110vh); }
-  to { transform:translateY(-10vh); }
-}
-
-/* scene */
 .scene {
-  position:relative;
-  z-index:1;
   width:100%;
-  max-width:600px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  max-width:650px;
+  text-align:center;
 }
 
-/* envelope */
 .envelope-wrap {
-  width:320px;
   cursor:pointer;
-  position:relative;
+  margin-top:20px;
 }
 
 .envelope {
-  width:100%;
-  aspect-ratio:1.6/1;
+  width:300px;
+  height:180px;
+  margin:auto;
   position:relative;
-}
-
-.env-body {
-  position:absolute;
-  inset:0;
   background:#f0849f;
-  border-radius:6px;
+  border-radius:8px;
 }
 
 .env-flap {
@@ -83,51 +48,32 @@ body {
   clip-path: polygon(0 0, 50% 100%, 100% 0);
   transform-origin:top;
   transition:0.6s;
-  z-index:5;
 }
 
 .envelope-wrap.open .env-flap {
   transform:rotateX(180deg);
 }
 
-.letter-peek {
-  position:absolute;
-  bottom:10%;
-  left:50%;
-  transform:translateX(-50%);
-  width:80%;
-  height:50%;
-  background:white;
-  transition:0.6s;
-  z-index:2;
-}
-
-.envelope-wrap.open .letter-peek {
-  transform:translate(-50%,-60%);
-}
-
-/* letter */
 .letter-container {
-  margin-top:30px;
   opacity:0;
   transform:translateY(20px);
-  transition:0.7s;
-  pointer-events:none;
+  transition:0.6s;
+  margin-top:30px;
 }
 
 .letter-container.visible {
   opacity:1;
   transform:translateY(0);
-  pointer-events:auto;
 }
 
 .letter-paper {
   background:white;
   padding:40px;
-  border-radius:4px;
+  border-radius:8px;
+  text-align:left;
+  box-shadow:0 10px 40px rgba(0,0,0,0.15);
 }
 
-/* image */
 .photo-wrap {
   margin-top:30px;
   text-align:center;
@@ -136,26 +82,20 @@ body {
 .photo-wrap img {
   width:100%;
   max-width:320px;
-  border-radius:6px;
+  border-radius:8px;
   box-shadow:0 10px 30px rgba(0,0,0,0.2);
-  display:block;
-  margin:auto;
 }
 </style>
 </head>
 
 <body>
 
-<div class="hearts-bg" id="heartsBg"></div>
-
 <div class="scene">
 
   <!-- ENVELOPE -->
   <div class="envelope-wrap" id="envelopeWrap" onclick="openEnvelope()">
     <div class="envelope">
-      <div class="env-body"></div>
       <div class="env-flap"></div>
-      <div class="letter-peek"></div>
     </div>
   </div>
 
@@ -164,15 +104,40 @@ body {
     <div class="letter-paper">
 
       <h2>For Anvita</h2>
-      <p>from Shreya ♥</p>
+      <p><b>from Shreya ♥</b></p>
 
-      <p style="margin-top:20px;">
-        (put your letter text here)
-      </p>
+      <div style="margin-top:20px; line-height:1.7;">
 
-      <!-- IMAGE FIXED HERE -->
+        <p>Dear Anvita,</p>
+
+        <p>I keep trying to figure out how to start this, and I honestly don't think there is a clean way, so I am just going to say it: I am so genuinely grateful for you, and I am really sad you are leaving, and I don't fully know how to hold both of those feelings at the same time. So I figured I would just write it all down instead.</p>
+
+        <p>I think about comp last year a lot. The Chipotle bathroom incident. That whole chaotic, delirious, completely unhinged day. I had so much fun with you, and I genuinely don't think I understood in that moment that it would turn into something that would end up meaning this much to me. But that is kind of how it is with you. Things just happen naturally, and then suddenly they are some of your favorite things, and you cannot really imagine not having them.</p>
+
+        <p>And since then, I have basically just lived at your place. Your apartment genuinely became one of my favorite places, not because of anything specific about it, but just because it is you. We would be on your couch doing absolutely nothing, half-watching Heartbreak High and still not finishing it, eating whatever random food (aka me eating your whole kitchen), barely studying, just talking and brainrotting and existing, and it’s always somehow the best time. And we are 100% calling and finishing it this summer!!</p>
+
+        <p>I also just love how naturally you include me in things. Errands, random plans, whatever you are doing, you just pull me along, like of course I’m coming, and I love that more than I probably say. It sounds small, but it is one of those things that makes you feel genuinely wanted in someone's life, and you do that without even trying.</p>
+
+        <p>I want to say something about who you are, because I think you deserve to hear it clearly. I genuinely don't think I have ever heard anyone say a single bad thing about you. Not one person. And I don't think that is luck or coincidence. That is just you. You are one of those rare people who are so genuinely kind and giving that it almost catches you off guard.</p>
+
+        <p>I joke a lot about acting like a younger sibling around you and how I can be so unhinged and stupid, but I really just appreciate that I can be completely myself with you. I ragebait you constantly, and your shocked face every single time is honestly one of my favorite things in the world. It is so genuinely funny and so cute, and I am going to miss it so much.</p>
+
+        <p>And I need you to hear this: I am always, always there. Nothing is ever too deep. Nothing is ever too much. You never have to filter yourself with me.</p>
+
+        <p>Next year at UCSD, I know things will change, and that makes me sad. But I also want you to go into it fully. Say yes to things. Meet people. Take up space. You are going to find your people there too.</p>
+
+        <p>Just please don't forget me when you're at UCSD. I will be here, annoying you from whatever distance necessary.</p>
+
+        <p>Thank you for everything. I love you so much. Go live your life fully next year. I will always be here cheering you on.</p>
+
+        <p><i>(I already know I forgot things I should’ve said… but I guess that’s what makes it real.)</i></p>
+
+        <p><b>Sincerely,<br>Shreya Hande</b></p>
+
+      </div>
+
       <div class="photo-wrap">
-        <img src="/mnt/data/9e820571-01d0-439f-b956-133598c652c9.png" alt="memory photo">
+        <img src="/mnt/data/9e820571-01d0-439f-b956-133598c652c9.png">
       </div>
 
     </div>
@@ -192,20 +157,6 @@ function openEnvelope() {
   } else {
     letter.classList.remove("visible");
   }
-}
-
-/* floating hearts */
-const heartsBg = document.getElementById("heartsBg");
-const hearts = ["♥","♡","❣"];
-
-for (let i = 0; i < 25; i++) {
-  const h = document.createElement("div");
-  h.className = "heart-float";
-  h.textContent = hearts[Math.floor(Math.random()*hearts.length)];
-  h.style.left = Math.random()*100 + "vw";
-  h.style.animationDuration = (4 + Math.random()*5) + "s";
-  h.style.fontSize = (12 + Math.random()*20) + "px";
-  heartsBg.appendChild(h);
 }
 </script>
 
