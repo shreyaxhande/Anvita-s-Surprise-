@@ -261,3 +261,195 @@
     opacity: 0.7;
     margin-bottom: 2.4rem;
   }
+
+   .divider {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 2rem 0;
+  }
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(232,103,138,0.35), transparent);
+  }
+  .divider-heart {
+    color: var(--pink-deep);
+    font-size: 0.7rem;
+    opacity: 0.5;
+  }
+
+  .salutation {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--pink-dark);
+    margin-bottom: 1.8rem;
+  }
+
+  .body-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.12rem;
+    font-weight: 300;
+    line-height: 1.95;
+    color: #3a1a28;
+    position: relative;
+    z-index: 1;
+  }
+  .body-text p { margin-bottom: 1.4em; }
+  .body-text p:last-child { margin-bottom: 0; }
+
+  .postscript {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: #8a4a60;
+    opacity: 0.85;
+    line-height: 1.8;
+    margin-top: 1.8rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba(232,103,138,0.2);
+  }
+
+  .sign-off {
+    margin-top: 2.4rem;
+    text-align: right;
+  }
+  .sign-off .closing {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pink-deep);
+    opacity: 0.7;
+    margin-bottom: 0.3rem;
+  }
+  .sign-off .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--pink-dark);
+  }
+
+  .photo-wrap {
+    margin-top: 3rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .photo-wrap img {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(201,64,112,0.2);
+    border: 3px solid rgba(255,255,255,0.9);
+    display: inline-block;
+  }
+  .photo-caption {
+    margin-top: 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--pink-deep);
+    opacity: 0.7;
+  }
+
+  @media (max-width: 560px) {
+    .letter-paper { padding: 2.8rem 2rem; }
+    .letter-title { font-size: 1.8rem; }
+    .salutation { font-size: 1.5rem; }
+    .body-text { font-size: 1.05rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hearts-bg" id="heartsBg"></div>
+
+<div class="scene">
+
+  <!-- ENVELOPE -->
+  <div class="envelope-wrap" id="envelopeWrap" onclick="openEnvelope()">
+    <div class="envelope">
+      <div class="env-body"></div>
+      <div class="env-left"></div>
+      <div class="env-right"></div>
+      <div class="env-bottom"></div>
+      <div class="letter-peek"></div>
+      <div class="env-flap">
+        <div class="env-flap-inner"></div>
+      </div>
+    </div>
+    <div class="click-hint">tap to open ♥</div>
+  </div>
+
+  <!-- LETTER -->
+  <div class="letter-container" id="letterContainer">
+    <div class="letter-paper">
+
+      <div class="letter-deco">♥ &nbsp; ♥ &nbsp; ♥</div>
+      <div class="letter-title">For Anvita</div>
+      <div class="letter-from">from Shreya :)</div>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-heart">♥</div>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="salutation">Dear Anvita,</div>
+
+      <div class="body-text">
+        <!-- paste your full letter paragraphs here -->
+      </div>
+
+      <div class="postscript">
+        (I'm not the best at these, I think there are so many more things I could say…)
+      </div>
+
+      <div class="sign-off">
+        <div class="closing">sincerely,</div>
+        <div class="name">Shreya Hande ♥</div>
+      </div>
+
+      <div class="photo-wrap">
+        <img src="YOUR-BASE64-IMAGE-HERE">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function openEnvelope() {
+  const wrap = document.getElementById("envelopeWrap");
+  const letter = document.getElementById("letterContainer");
+
+  wrap.classList.toggle("open");
+
+  if (wrap.classList.contains("open")) {
+    letter.classList.add("visible");
+  } else {
+    letter.classList.remove("visible");
+  }
+}
+
+// floating hearts
+const heartsBg = document.getElementById("heartsBg");
+const hearts = ["♥","♡","❣","❤"];
+for (let i = 0; i < 30; i++) {
+  const h = document.createElement("div");
+  h.className = "heart-float";
+  h.textContent = hearts[Math.floor(Math.random()*hearts.length)];
+  h.style.left = Math.random()*100 + "vw";
+  h.style.animationDuration = 6 + Math.random()*6 + "s";
+  h.style.animationDelay = Math.random()*5 + "s";
+  heartsBg.appendChild(h);
+}
+</script>
+
+</body>
+</html>
+
